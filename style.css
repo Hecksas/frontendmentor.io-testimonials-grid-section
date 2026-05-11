@@ -39,19 +39,20 @@ Shared CSS
 
 .testi-container {
   padding: 30px;
-  max-width: 350px;
   border-radius: 1rem;
 }
 
 .top {
   display: flex;
   align-items: center;
+  gap: 17px;
   margin-bottom: 15px;
 }
 
 img {
   border-radius: 50%;
-  width: 55%;
+  width: 30px;
+  height: 30px;
   border: 2px solid;
 }
 
@@ -66,8 +67,19 @@ h2 {
 
 .text {
   font-size: 0.875rem;
-  line-height: 1.2rem;
-  font-weight: 300;
+  line-height: 1.275rem;
+}
+
+.testi-1 .text,
+.testi-2 .text,
+.testi-4 .text {
+  color: hsl(0, 0%, 81%);
+}
+
+.testi-3 .text,
+.testi-5 .text {
+  color: hsl(224, 10%, 45%);
+  font-weight: 200;
 }
 
 /* 
@@ -86,7 +98,7 @@ Cards
 }
 
 .testi-2 {
-  background-color: hsl(224, 10%, 45%);
+  background-color: hsl(217, 19%, 35%);
   color: hsl(0, 0%, 100%);
 }
 
@@ -111,5 +123,87 @@ Cards
 }
 
 .testi-4 img {
-  border-color: hsl(264, 82%, 80%);
+  border-color: hsl(263, 55%, 52%);
+}
+
+/* 
+===========================================
+Responsive
+===========================================
+*/
+
+@media (min-width: 613px) {
+  .card-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "gr-1 gr-4"
+      "gr-2 gr-3"
+      "gr-5 gr-5";
+  }
+
+  .testi-container {
+    height: 100%;
+  }
+  .testi-1 {
+    grid-area: gr-1;
+  }
+
+  .testi-2 {
+    grid-area: gr-2;
+  }
+
+  .testi-3 {
+    grid-area: gr-3;
+  }
+
+  .testi-4 {
+    grid-area: gr-4;
+  }
+
+  .testi-5 {
+    grid-area: gr-5;
+  }
+}
+
+@media (min-width: 850px) {
+  .card-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "gr-1 gr-1 gr-2 gr-5"
+      "gr-3 gr-4 gr-4 gr-5";
+  }
+
+  .testi-1 {
+    grid-area: gr-1;
+    min-width: 50%;
+    height: 100%;
+  }
+
+  .testi-2 {
+    grid-area: gr-2;
+    min-width: 25%;
+    height: 100%;
+  }
+
+  .testi-3 {
+    grid-area: gr-3;
+    min-width: 25%;
+    height: 100%;
+  }
+
+  .testi-4 {
+    grid-area: gr-4;
+    min-width: 50%;
+    height: 100%;
+  }
+
+  .testi-5 {
+    grid-area: gr-5;
+    min-width: 25%;
+    height: 100%;
+  }
 }
